@@ -28,6 +28,7 @@ INSTALLED_APPS = (
 
     # 3rd-party apps.
     "storages",
+    "pin_passcode",
 )
 OUR_APPS = (
     "pages",
@@ -44,6 +45,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'pin_passcode.middleware.PinPasscodeMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -174,3 +176,6 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+# Pin passcode
+PIN_PASSCODE_PIN = 1596

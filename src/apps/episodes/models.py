@@ -3,9 +3,12 @@ from django.db import models
 
 
 class Episode(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, unique=True)
     date = models.DateField()
     #link_to_episode??  # only if public?
+
+    def __str__(self):
+        return "RBR: {}".format(self.title)
 
 
 class Notes(models.Model):
