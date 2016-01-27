@@ -17,6 +17,9 @@ class Notes(models.Model):
     episode_timestamp = models.CharField(max_length=12, null=True, blank=True)  # 15:30, 15m 30s, 1530
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="notes")
 
+    def __str__(self):
+        return "Notes for {}".format(self.episode.title)
+
 
 class Character(models.Model):
     is_fool = models.BooleanField(default=False)
